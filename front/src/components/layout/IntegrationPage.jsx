@@ -28,7 +28,7 @@ const IntegrationPage = ({ children, ...props }) => (
                   <br />
                   <div class="row">
                     <div class="col-6">
-                      <button class="btn btn-success btn-block">
+                      <button class="btn btn-primary btn-block">
                         <Text id="integration.root.restartButton" />
                       </button>
                     </div>
