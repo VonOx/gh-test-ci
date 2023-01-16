@@ -138,7 +138,7 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v2
         with:
-          version: v0.9.1
+          version: latest
       - name: ↙️ Download build artifact
         uses: actions/download-artifact@v3
         with:
@@ -166,6 +166,7 @@ jobs:
           tags: ${{ steps.docker_meta.outputs.tags }}
           cache-from: type=registry,ref=${{ env.DOCKERHUB_REPO }}:latest
           cache-to: type=inline
+          outputs: oci-mediatypes=false
       - name: 🐳 Legacy Tags
         run: |
           echo '{"experimental": true}' | sudo tee -a /etc/docker/daemon.json
